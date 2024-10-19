@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cguefh72ruj3e"]
+
+[ext_resource type="FontFile" uid="uid://du3rdk47pok2t" path="res://assets/fonts/BD_Cartoon_Shout.ttf" id="1_w16lo"]
+[ext_resource type="Texture2D" uid="uid://po87j5f2ci1v" path="res://assets/sprites/button.png" id="2_2avdn"]
+[ext_resource type="Texture2D" uid="uid://cpbkxl6r1765u" path="res://assets/sprites/panel.png" id="3_lq7od"]
+[ext_resource type="Texture2D" uid="uid://cftsagpasplej" path="res://assets/sprites/panel-variant.png" id="4_r1uf8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xedbh"]
+texture = ExtResource("2_2avdn")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koddw"]
+texture = ExtResource("3_lq7od")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f6t78"]
+texture = ExtResource("4_r1uf8")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_w16lo")
+Button/styles/normal = SubResource("StyleBoxTexture_xedbh")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/colors/font_color = Color(1, 0.583863, 0.93202, 1)
+HeaderLarge/colors/font_outline_color = Color(1, 1, 1, 1)
+HeaderLarge/constants/outline_size = 25
+HeaderLarge/font_sizes/font_size = 70
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_w16lo")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_koddw")
+PanelContainerVariant/base_type = &"PanelContainer"
+PanelContainerVariant/styles/panel = SubResource("StyleBoxTexture_f6t78")
