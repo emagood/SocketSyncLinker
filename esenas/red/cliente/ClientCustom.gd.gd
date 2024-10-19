@@ -92,7 +92,7 @@ func rpc_server_all_response(peer_id, test_var1 = "gola", test_var2  = port):
 	#peer_id = multiplayer.get_remote_sender_id() 
 	prints(peer_id, "   datos response cliente" , test_var2 , "  fall " , test_var1)
 	prints(" del lado del cliente    cliente    " + str(peer_id))
-	#print("respuesta al  peer_id : {0}".format([peer_id]) + "  del servidor `port" + str(port))
+	#
 
 
 
@@ -104,8 +104,7 @@ func _input(event: InputEvent) -> void:
 	"gorro" : "falso",
 	"cliente" : str("holka desde el clinte  " + str(multiplayer_api.get_unique_id()))
 	}
-		#rpc_server_custom.rpc_id(1,ema)
-		#rpc_server_custom.rpc_id(1,)
+
 	if Input.is_key_pressed(KEY_A): queue_free()
 	if Input.is_key_pressed(KEY_D) and rpc_true == true:
 		multiplayer.multiplayer_peer.disconnect_peer(1)

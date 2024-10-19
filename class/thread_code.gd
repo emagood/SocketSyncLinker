@@ -59,7 +59,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_W): 
 			thread.wait_to_finish()
 			thread = Thread.new()
-			thread.start(_thread_function.bind("Wafflecopter"))
+			thread.start(_thread_function.bind("soy-yo"))
 			thread2.wait_to_finish()
 			thread2 = Thread.new()
-			thread2.start(_thread_function.bind("Wafflecopter"))
+			thread2.start(_thread_function.bind("momo"))
