@@ -10,7 +10,7 @@ extends Control
 
 func _ready() -> void:
 	titulo.text = str(Data.t_id)
-	pass # Replace with function body.
+	pass 
 
 
 
@@ -42,4 +42,4 @@ func _on_regresar_pressed() -> void:
 	rpc_local.nueva_menu()
 	queue_free()
 	
-	pass # Replace with function body.
+	pass
