@@ -45,13 +45,6 @@ func _on_peer_connected(peer_id):
 	
 	prints(peer.get_remote_address())
 
-   #
-	#var remote_ip = get_tree().get_peer(peer_id).get_remote_address()
-	##prints(multiplayer_api.get_remote_address())
-	##prints(multiplayer.peer_id.get_remote_address())
-	#prints(remote_ip)
-
-
 
 
 func _on_peer_disconnected(peer_id):
@@ -112,22 +105,7 @@ func rpc_server_pin(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 	rpc_server_pin.rpc_id(peer_id, test_var1, test_var2)
 
 
-#
-#func upnp_setup():
-	#
-	#
-	#var discover_result = upnp.discover()
-	#assert(discover_result == UPNP.UPNP_RESULT_SUCCESS, \
-	#"UPNP Discover failed! Error %s" % discover_result)
-	#
-	#assert(upnp.get_gateway() and upnp.get_gateway().is_valid_gateway(), \
-	#"UPNP Invalid Gateway!") 
-	#
-	#var map_result = upnp.add_port_mapping(port)
-	#assert(map_result == UPNP.UPNP_RESULT_SUCCESS, \
-	#"UPNP Port Mapping Failed! Error %s" % map_result)
-	#
-	#print("Success! Join Address: %s" % upnp.query_external_address())
+
 	
 
 
