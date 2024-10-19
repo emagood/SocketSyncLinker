@@ -41,7 +41,7 @@ func _upnp_setup(server_port):
 
 func nueva_red(port,ip):
 	if Data.t_id == null :
-		var player = preload("res://esenas/red/cliente/cliente.tscn").instantiate()
+		var player = preload("res://escena/red/cliente/cliente.tscn").instantiate()
 		player.port = port
 		player.address = ip
 		add_child(player)
@@ -59,7 +59,7 @@ func nueva_host(port):
 		return
 	host_local[port] = true
 	prints("servidor")
-	var player = preload("res://esenas/red/host/servidor.tscn").instantiate()
+	var player = preload("res://escena/red/host/servidor.tscn").instantiate()
 	player.port = port
 	add_child(player)
 	thread.start(_upnp_setup.bind(SERVER_PORT))
@@ -86,7 +86,7 @@ func _input(event: InputEvent) -> void:
 
 func nueva_menu():
 	prints("servidor")
-	var player = preload("res://esenas/red/menu/menu.tscn").instantiate()
+	var player = preload("res://escena/red/menu/menu.tscn").instantiate()
 	add_child(player)
 	prints("instancio escena")
 	await get_tree().create_timer(3).timeout
@@ -94,7 +94,7 @@ func nueva_menu():
 
 func nueva_msj():
 	prints("servidor")
-	var player = preload("res://esenas/mensaje/mensaje.tscn").instantiate()
+	var player = preload("res://escena/mensaje/mensaje.tscn").instantiate()
 	add_child(player)
 	prints("instancio escena")
 	await get_tree().create_timer(3).timeout

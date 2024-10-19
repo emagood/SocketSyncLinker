@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkuw8iajtusby"]
 
-[ext_resource type="Script" path="res://esenas/thread/thread.gd" id="1_akl8i"]
+[ext_resource type="Script" path="res://escena/thread/thread.gd" id="1_akl8i"]
 
 [node name="thread" type="Control"]
 layout_mode = 3

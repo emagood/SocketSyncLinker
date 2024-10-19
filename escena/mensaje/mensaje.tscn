@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://biftlm4wl8bdq"]
 
-[ext_resource type="Script" path="res://esenas/mensaje/mensaje.gd" id="1_20taq"]
+[ext_resource type="Script" path="res://escena/mensaje/mensaje.gd" id="1_20taq"]
 [ext_resource type="Texture2D" uid="uid://306y1ctsathc" path="res://assets/fondo/paisaje.jpeg" id="1_pt3w0"]
 [ext_resource type="Texture2D" uid="uid://drbhcg4aeveh6" path="res://assets/Buttons/Button10.png" id="2_e3kpn"]
 [ext_resource type="Texture2D" uid="uid://dk6d0uvgbjl1y" path="res://assets/Buttons/Button3.png" id="3_0o3wd"]
