@@ -32,6 +32,7 @@ folder_colors={
 "res://assets/": "green",
 "res://assets/Buttons/": "green",
 "res://assets/fondo/": "green",
+"res://capturas/": "yellow",
 "res://class/": "purple",
 "res://escena/": "red",
 "res://pruebas/": "gray",
