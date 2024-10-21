@@ -2,10 +2,17 @@
  red de godot p2p cliente-servidor usando e-net
  por ahora solo es un proyecto de prueba 
  no esta documentado y comentado 
+ 
 
- # loggin 
- ![Screenshot borrar]()
+ # loggin a un servidor 
+ 
+ ![Screenshot borrar](https://github.com/emagood/enet-godot-multi-user/blob/main/capturas/principal.PNG)
 
+ 
+# mensages entre pares / peer to peer
+
+ ![Screenshot borrar](https://github.com/emagood/enet-godot-multi-user/blob/main/capturas/login%20mensaje.PNG)
+ 
 Características :
 
 # e-net
