@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx04h62ws1rtv"]
+
+[ext_resource type="Script" path="res://escena/scroll/molde.gd" id="1_e7bel"]
+[ext_resource type="Texture2D" uid="uid://306y1ctsathc" path="res://assets/fondo/paisaje.jpeg" id="2_ahltp"]
+[ext_resource type="PackedScene" uid="uid://b3xgouuphxig3" path="res://escena/scroll/menu_select.tscn" id="3_o04th"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48x4w"]
+texture = ExtResource("2_ahltp")
+
+[node name="scroll" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="molde" type="CanvasLayer" parent="."]
+script = ExtResource("1_e7bel")
+
+[node name="region" type="ScrollContainer" parent="molde"]
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+theme_override_styles/panel = SubResource("StyleBoxTexture_48x4w")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="molde/region"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="molde/region/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="molde/region/CenterContainer/MarginContainer"]
+z_as_relative = false
+layout_mode = 2
+size_flags_vertical = 4
+localize_numeral_system = false
+
+[node name="TextureRect" parent="molde/region/CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_o04th")]
+layout_mode = 2
+
+[node name="TextureRect2" parent="molde/region/CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_o04th")]
+layout_mode = 2
+
+[node name="TextureRect3" parent="molde/region/CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_o04th")]
+layout_mode = 2
+
+[node name="TextureRect4" parent="molde/region/CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_o04th")]
+layout_mode = 2
+
+[node name="TextureRect5" parent="molde/region/CenterContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_o04th")]
+layout_mode = 2

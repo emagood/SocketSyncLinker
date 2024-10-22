@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3xgouuphxig3"]
+
+[ext_resource type="Texture2D" uid="uid://c5dyrfnhglo0m" path="res://assets/icon/icoe-net.png" id="1_ap27m"]
+[ext_resource type="Script" path="res://escena/scroll/menu_select.gd" id="2_r576i"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ap27m")
+script = ExtResource("2_r576i")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.045
+anchor_bottom = 0.046
+offset_left = 234.0
+offset_top = 422.0
+offset_right = 256.5
+offset_bottom = 422.0
+text = "select"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
