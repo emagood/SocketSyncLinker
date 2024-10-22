@@ -32,12 +32,12 @@ folder_colors={
 "res://assets/": "green",
 "res://assets/Buttons/": "green",
 "res://assets/fondo/": "green",
-"res://capturas/": "yellow",
+"res://capturas/": "blue",
 "res://class/": "purple",
 "res://escena/": "red",
 "res://pruebas/": "gray",
 "res://resources/": "orange",
-"res://tools/": "blue"
+"res://tools/": "yellow"
 }
 
 [input_devices]
