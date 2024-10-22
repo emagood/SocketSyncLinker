@@ -99,10 +99,10 @@ func rpc_sms(test_var1, test_var2):
 	
 	
 @rpc("call_local","any_peer") 
-func rpc_server_pin(peer_id, test_var1 : int = 0, test_var2 : int = 0):
+func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 	prints("del cliente ",test_var1 , " el segundo dato " , test_var2)
 	print("all response servidor : {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	rpc_server_pin.rpc_id(peer_id, test_var1, test_var2)
+	#rpc_server_all_response.rpc_id(peer_id, test_var1, test_var2)
 
 
 
