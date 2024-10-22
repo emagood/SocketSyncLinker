@@ -114,7 +114,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="salir" type="TouchScreenButton" parent="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer"]
-position = Vector2(336, 20.7083)
+position = Vector2(346, 29.0417)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_e3kpn")
 texture_pressed = ExtResource("3_0o3wd")
@@ -151,6 +151,13 @@ offset_top = 27.4999
 offset_right = 140.0
 offset_bottom = 50.4999
 text = "conectar"
+
+[node name="CheckButton" type="CheckButton" parent="enviar mensaje"]
+offset_left = 322.0
+offset_top = 249.0
+offset_right = 480.0
+offset_bottom = 280.0
+text = "enviar a todos"
 
 [connection signal="pressed" from="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer/salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer/enviar" to="." method="_on_enviar_pressed"]

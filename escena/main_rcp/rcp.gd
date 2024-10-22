@@ -73,9 +73,9 @@ func nueva_host(port):
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
-	if Input.is_key_pressed(KEY_S): nueva_host(8888)
-	if Input.is_key_pressed(KEY_M): nueva_msj()
+	#if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
+	#if Input.is_key_pressed(KEY_S): nueva_host(8888)
+	#if Input.is_key_pressed(KEY_M): nueva_msj()
 	
 	pass
 

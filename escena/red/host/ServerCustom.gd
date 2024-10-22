@@ -90,7 +90,7 @@ func _input(event: InputEvent) -> void:
 	pass
 
 
-@rpc("call_local","any_peer")  
+@rpc("call_remote","any_peer")  
 func rpc_sms(test_var1, test_var2):
 	var peer_id = multiplayer.get_remote_sender_id() 
 	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
@@ -112,3 +112,6 @@ func rpc_server_pin(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 
 func send_msj(id,dat):
 	rpc_sms.rpc_id(id,dat,"HOLA")
+
+func send_msja(id,dat):
+	rpc_sms.rpc(dat,"HOLA")

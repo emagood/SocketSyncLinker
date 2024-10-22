@@ -45,6 +45,13 @@ func _on_salir_pressed() -> void:
 
 
 func _on_server_pressed() -> void:
+	if rpc_local.host_local.has(8888):
+		prints("existe el puerto del host")
+		rpc_local.nueva_msj()
+		queue_free()
+		return
+#######################################
+
 	rpc_local.nueva_host(8888)
 	rpc_local.nueva_msj()
 	queue_free()
