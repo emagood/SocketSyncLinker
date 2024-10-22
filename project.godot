@@ -36,7 +36,8 @@ folder_colors={
 "res://class/": "purple",
 "res://escena/": "red",
 "res://pruebas/": "gray",
-"res://resources/": "orange"
+"res://resources/": "orange",
+"res://tools/": "blue"
 }
 
 [input_devices]
