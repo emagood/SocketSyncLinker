@@ -42,3 +42,10 @@ func _on_login_pressed() -> void:
 func _on_salir_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.
+
+
+func _on_server_pressed() -> void:
+	rpc_local.nueva_host(8888)
+	rpc_local.nueva_msj()
+	queue_free()
+	pass # Replace with function body.

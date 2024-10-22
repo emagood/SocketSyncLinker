@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvdidnkl0k2qq"]
+[gd_scene load_steps=8 format=3 uid="uid://dvdidnkl0k2qq"]
 
 [ext_resource type="Script" path="res://escena/red/menu/menu.gd" id="1_hung8"]
 [ext_resource type="Texture2D" uid="uid://306y1ctsathc" path="res://assets/fondo/paisaje.jpeg" id="2_7i2sb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk6d0uvgbjl1y" path="res://assets/Buttons/Button3.png" id="4_jdoyc"]
 [ext_resource type="Texture2D" uid="uid://b4vm1p7l5aqol" path="res://assets/Buttons/Button22png.png" id="5_pjukf"]
 [ext_resource type="Texture2D" uid="uid://bee2avp6jc4a5" path="res://assets/Buttons/Button21.png" id="6_ud0mg"]
+[ext_resource type="Texture2D" uid="uid://bh0c47pygbpt0" path="res://assets/Buttons/Button20s.png" id="7_iuw54"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -153,6 +154,20 @@ offset_right = 140.0
 offset_bottom = 50.4999
 text = "registre"
 
+[node name="server" type="TouchScreenButton" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+position = Vector2(254, 120.708)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_iuw54")
+texture_pressed = ExtResource("4_jdoyc")
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/server"]
+offset_left = 79.9998
+offset_top = 27.4999
+offset_right = 140.0
+offset_bottom = 50.4999
+text = "server"
+
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/regresar" to="." method="_on_regresar_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/server" to="." method="_on_server_pressed"]

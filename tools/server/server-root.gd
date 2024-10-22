@@ -22,7 +22,7 @@ func _ready():
 	# can use "/root/ServerCustom" or self.get_path()
 	multiplayer_api.multiplayer_peer = server_custom
 	Data.t_id = multiplayer_api.get_unique_id()
-	prints(" mi id servidor " + str(multiplayer_api.get_unique_id()))
+	prints(" mi id servidor " + str(Data.t_id))
 
 
 
