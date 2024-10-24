@@ -107,6 +107,38 @@ alignment = 1
 secret = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0.1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.08
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.29, 21.135)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+text = "ip *"
+horizontal_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.14
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.65
+alignment = 1
+secret = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.08

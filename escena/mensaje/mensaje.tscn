@@ -159,6 +159,13 @@ offset_right = 480.0
 offset_bottom = 280.0
 text = "enviar a todos"
 
+[node name="Label" type="Label" parent="enviar mensaje/CheckButton"]
+layout_mode = 0
+offset_left = 205.0
+offset_right = 245.0
+offset_bottom = 23.0
+text = "ip"
+
 [connection signal="pressed" from="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer/salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer/enviar" to="." method="_on_enviar_pressed"]
 [connection signal="pressed" from="enviar mensaje/PanelContainer/VBoxContainer/HBoxContainer/regresar" to="." method="_on_regresar_pressed"]

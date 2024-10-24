@@ -11,6 +11,8 @@ extends Control
 
 func _ready() -> void:
 	titulo.text = str(Data.t_id)
+	if Data.external_ip != "" :
+		$"enviar mensaje/CheckButton/Label".text = Data.external_ip
 	pass 
 
 

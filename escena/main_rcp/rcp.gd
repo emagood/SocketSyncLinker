@@ -36,12 +36,13 @@ func _upnp_setup(server_port):
 	var err = upnp.discover()
 	if err != OK:
 		push_error(str(err))
-		emit_signal("upnp_completed", err)
 		return
 	if upnp.get_gateway() and upnp.get_gateway().is_valid_gateway():
 		upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "UDP")
 		#upnp.add_port_mapping(server_port, server_port, ProjectSettings.get_setting("application/config/name"), "TCP")
-		print("Success! Join Address: %s" % upnp.query_external_address())
+		Data.external_ip = upnp.query_external_address()
+		print("Success! Join Address: %s" % Data.external_ip)
+		
 
 
 

@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+net cliente 4.apk
+net cliente 4.apk.idsig
