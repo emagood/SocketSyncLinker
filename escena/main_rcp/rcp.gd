@@ -1,3 +1,10 @@
+
+'''
+	mejorar el t_id identificador por un diccionario 
+	admitir varios usuarios abrir el id 
+	mover host_local a datos globales
+
+'''
 extends Control
 
 const SERVER_PORT = 8888
@@ -40,7 +47,7 @@ func _upnp_setup(server_port):
 
 
 func nueva_red(port,ip):
-	if Data.t_id == null :
+	if Data.t_id.is_empty():
 		var player = preload("res://escena/red/cliente/cliente.tscn").instantiate()
 		player.port = port
 		player.address = ip
@@ -73,7 +80,7 @@ func nueva_host(port):
 
 
 func _input(event: InputEvent) -> void:
-	#if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
+	if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
 	#if Input.is_key_pressed(KEY_S): nueva_host(8888)
 	#if Input.is_key_pressed(KEY_M): nueva_msj()
 	

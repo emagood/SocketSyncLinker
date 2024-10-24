@@ -1,6 +1,6 @@
 extends Node
 
-@export var t_id = null
+@export var t_id : Dictionary = {}
 @export var type_permiso = -1
 @export var loby = {}
 @export var id_peer = 0

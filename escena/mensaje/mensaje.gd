@@ -28,10 +28,12 @@ func _on_salir_pressed() -> void:
 
 
 func _on_enviar_pressed() -> void:
-	if Data.t_id == null : return
+	if Data.t_id.is_empty() :
+			prints(Data.t_id)
+			return
 	
 	
-	if Data.t_id == 1:
+	if  Data.t_id.has(1):
 		if botton_send.button_pressed == true :
 			send_msjs.send_msja(id_user.text.to_int(),text_user.text)
 			

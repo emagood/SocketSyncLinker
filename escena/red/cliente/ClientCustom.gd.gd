@@ -37,7 +37,7 @@ func _ready():
 	print("Custom ClientUnique ID: {0}".format([multiplayer_api.get_unique_id()]))
 	
 	
-	Data.t_id = multiplayer_api.get_unique_id()
+	Data.t_id[multiplayer_api.get_unique_id()] = port
 	await get_tree().create_timer(1).timeout
 
 
@@ -46,11 +46,17 @@ func _ready():
 
 
 func _process(_delta: float) -> void:
+	if Data.t_id.is_empty():
+		prints("vasio")
 	if multiplayer_api.has_multiplayer_peer():
 		multiplayer_api.poll()
 		
 		
 		if local_id != "" and rpc_true == false:
+			prints("sali")
+			if Data.t_id.has(local_id.to_int()):
+				Data.t_id.erase(local_id.to_int())
+				prints("salgo")
 			queue_free()
 
 
@@ -58,7 +64,7 @@ func _process(_delta: float) -> void:
 
 func _on_server_disconnected():
 	rpc_true = false
-	Data.t_id = null
+	Data.t_id.erase(local_id.to_int())
 	print("se desconecto el servidor")
 
 
@@ -68,8 +74,10 @@ func _on_connection_succeeded():
 	print("Custom Client _on_connection_succeeded")
 	await get_tree().create_timer(1).timeout
 	print("Custom Peers: {0}".format([multiplayer.get_peers()]))
-	Data.t_id = multiplayer_api.get_unique_id()
-	local_id = str(Data.t_id)
+	if Data.t_id.has(str(multiplayer_api.get_unique_id())):
+		prints("error")
+	Data.t_id[multiplayer_api.get_unique_id()] = port
+	local_id = str(multiplayer_api.get_unique_id())
 	#rpc_server_custom("hola")
 
 
