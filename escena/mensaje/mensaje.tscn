@@ -44,14 +44,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(2.29, 21.135)
 layout_mode = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="enviar mensaje/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.29, 21.135)
+layout_mode = 2
+
 [node name="Label" type="Label" parent="enviar mensaje/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "mensaje"
 horizontal_alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="enviar mensaje/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(2.29, 21.135)
-layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="enviar mensaje/PanelContainer/VBoxContainer"]
 layout_mode = 2

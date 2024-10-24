@@ -1,3 +1,12 @@
+'''
+	arreglar la eliminacion del nodo 
+	refactorizar 
+	vincular un protocolo 
+	refactorizar funciones del cliente y el servidor
+
+'''
+
+
 extends Node
 
 var client_custom = ENetMultiplayerPeer.new()
@@ -5,7 +14,7 @@ var multiplayer_api : MultiplayerAPI
 var rpc_true = false
 var address = "127.0.0.1"
 var port = 8888
-
+var local_id = ""
 
 func _ready():
 	
@@ -19,10 +28,15 @@ func _ready():
 	multiplayer_api = MultiplayerAPI.create_default_interface()
 	get_tree().set_multiplayer(multiplayer_api, self.get_path()) 
 	multiplayer_api.multiplayer_peer = client_custom
+	
 	multiplayer_api.connected_to_server.connect(_on_connection_succeeded)
 	multiplayer_api.connection_failed.connect(_on_connection_failed)
 	multiplayer_api.server_disconnected.connect(_on_server_disconnected)
+	
+	
 	print("Custom ClientUnique ID: {0}".format([multiplayer_api.get_unique_id()]))
+	
+	
 	Data.t_id = multiplayer_api.get_unique_id()
 	await get_tree().create_timer(1).timeout
 
@@ -34,6 +48,10 @@ func _ready():
 func _process(_delta: float) -> void:
 	if multiplayer_api.has_multiplayer_peer():
 		multiplayer_api.poll()
+		
+		
+		if local_id != "" and rpc_true == false:
+			queue_free()
 
 
 
@@ -51,6 +69,7 @@ func _on_connection_succeeded():
 	await get_tree().create_timer(1).timeout
 	print("Custom Peers: {0}".format([multiplayer.get_peers()]))
 	Data.t_id = multiplayer_api.get_unique_id()
+	local_id = str(Data.t_id)
 	#rpc_server_custom("hola")
 
 
@@ -109,6 +128,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_A): queue_free()
 	if Input.is_key_pressed(KEY_D) and rpc_true == true:
 		multiplayer.multiplayer_peer.disconnect_peer(1)
+		
 
 
 
@@ -116,27 +136,27 @@ func _input(event: InputEvent) -> void:
 
 	#client_custom.create_client(address, port)#
 	if Input.is_key_pressed(KEY_N) and rpc_true == false:
-		cliente_rcp(address,port)
+		#cliente_rcp(address,port)
 		prints("crear")
 
 
 
 
 
-func cliente_rcp(address , port) :
-	if !multiplayer_api.has_multiplayer_peer():
-		multiplayer_api = MultiplayerAPI.create_default_interface()
-		prints("cliente creado")
-		return
-	if rpc_true == true:
-		return
-	client_custom.create_client(address, port)
-	get_tree().set_multiplayer(multiplayer_api, self.get_path()) 
-	multiplayer_api.multiplayer_peer = client_custom
-	multiplayer_api.connected_to_server.connect(_on_connection_succeeded)
-	multiplayer_api.server_disconnected.connect(_on_connection_failed)
-	print("Custom ClientUnique ID: {0}".format([multiplayer_api.get_unique_id()]))
-	await get_tree().create_timer(1).timeout
+#func cliente_rcp(address , port) :
+	#if !multiplayer_api.has_multiplayer_peer():
+		#multiplayer_api = MultiplayerAPI.create_default_interface()
+		#prints("cliente creado")
+		#return
+	#if rpc_true == true:
+		#return
+	#client_custom.create_client(address, port)
+	#get_tree().set_multiplayer(multiplayer_api, self.get_path()) 
+	#multiplayer_api.multiplayer_peer = client_custom
+	#multiplayer_api.connected_to_server.connect(_on_connection_succeeded)
+	#multiplayer_api.server_disconnected.connect(_on_connection_failed)
+	#print("Custom ClientUnique ID: {0}".format([multiplayer_api.get_unique_id()]))
+	#await get_tree().create_timer(1).timeout
 
 
 

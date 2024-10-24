@@ -20,6 +20,7 @@ script = ExtResource("1_e7bel")
 
 [node name="region" type="ScrollContainer" parent="molde"]
 z_as_relative = false
+clip_contents = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
