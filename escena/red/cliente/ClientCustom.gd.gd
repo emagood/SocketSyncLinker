@@ -8,7 +8,7 @@
 
 
 extends Node
-
+@onready var send_msjs = get_tree().get_first_node_in_group("msj")
 var client_custom = ENetMultiplayerPeer.new()
 var multiplayer_api : MultiplayerAPI
 var rpc_true = false
@@ -101,15 +101,19 @@ func rpc_server_custom_response(test_var1, test_var2):
 	print("Custom Client rpc_server_custom_response: {0} {1}".format(
 		[test_var1, test_var2]))
 
+func init_group():
+	self.send_msjs = get_tree().get_first_node_in_group("msj")
 
-
-@rpc("any_peer","call_local") 
+@rpc("call_remote","any_peer") 
 func rpc_sms(test_var1, test_var2):
-	
-	prints("yo resivi " + str(Data.t_id) , "  " ,test_var1 , test_var2)
 	var peer_id = multiplayer.get_remote_sender_id() 
-	rpc_server_all_response(peer_id,"soy el cliente",port)
-	prints("cliente del all response del sccript cliente ",test_var1 , "  el otro dato " , test_var2)
+	if send_msjs == null:
+		init_group()
+	send_msjs.msj_entra = str(test_var1 + " " + test_var2 +  "\n" + "mensaje de   " + str(peer_id))
+	prints("yo resivi " + str(Data.t_id) , "  " ,test_var1 , test_var2)
+
+	#rpc_server_all_response(peer_id,"soy el cliente",port)
+	#prints("cliente del all response del sccript cliente ",test_var1 , "  el otro dato " , test_var2)
 	#print("llamada all any peer: {0} {1}".format(
 		#[test_var1, test_var2]))
 
@@ -126,27 +130,26 @@ func rpc_server_all_response(peer_id, test_var1 = "gola", test_var2  = port):
 
 
 func _input(event: InputEvent) -> void:
-	if rpc_true == true : 
-		var ema = {"ema" : "gfvhjgijgihj",
-		"loby" : "user",
-	"gorro" : "falso",
-	"cliente" : str("holka desde el clinte  " + str(multiplayer_api.get_unique_id()))
-	}
+	#if rpc_true == true : 
+		#var ema = {"ema" : "gfvhjgijgihj",
+		#"loby" : "user",
+	#"gorro" : "falso",
+	#"cliente" : str("holka desde el clinte  " + str(multiplayer_api.get_unique_id()))
+	#}
+#
+	#if Input.is_key_pressed(KEY_A): queue_free()
+	#if Input.is_key_pressed(KEY_D) and rpc_true == true:
+		#multiplayer.multiplayer_peer.disconnect_peer(1)
+		#
 
-	if Input.is_key_pressed(KEY_A): queue_free()
-	if Input.is_key_pressed(KEY_D) and rpc_true == true:
-		multiplayer.multiplayer_peer.disconnect_peer(1)
-		
+	pass
 
 
-
-
-
-	#client_custom.create_client(address, port)#
-	if Input.is_key_pressed(KEY_N) and rpc_true == false:
-		#cliente_rcp(address,port)
-		prints("crear")
-
+	##client_custom.create_client(address, port)#
+	#if Input.is_key_pressed(KEY_N) and rpc_true == false:
+		##cliente_rcp(address,port)
+		#prints("crear")
+#
 
 
 

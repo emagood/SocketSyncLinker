@@ -6,10 +6,15 @@ extends Control
 @onready var send_msj = get_tree().get_first_node_in_group("cliente")
 @onready var send_msjs = get_tree().get_first_node_in_group("host")
 @onready var rpc_local = get_tree().get_first_node_in_group("rpc_local")
+@onready var nscroll = $"enviar mensaje/Panel/sdcrol"
+@onready var nmsj_label = $"enviar mensaje/Panel/sdcrol/Label"
+@export var msj_entra = "bienvenidos" +  "\n"
+@export var soze = 40
 
 
 
 func _ready() -> void:
+	add_to_group("msj")
 	titulo.text = str(Data.t_id)
 	if Data.external_ip != "" :
 		$"enviar mensaje/CheckButton/Label".text = Data.external_ip
@@ -20,6 +25,12 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	if msj_entra != "":
+		nscroll.scroll_vertical += soze
+		nmsj_label.text += str(msj_entra) +" para  " + str(Data.t_id.keys()) + "\n"
+		#nmsj_label.text += "\n"
+		msj_entra = ""
 	pass
 
 
@@ -30,6 +41,9 @@ func _on_salir_pressed() -> void:
 
 
 func _on_enviar_pressed() -> void:
+	nscroll.scroll_vertical += soze
+	nmsj_label.text += str(text_user.text) +"  " + str(Data.t_id.keys()) + "\n"
+
 	if Data.t_id.is_empty() :
 			prints(Data.t_id)
 			return
