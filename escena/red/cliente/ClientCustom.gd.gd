@@ -11,9 +11,9 @@ extends Node
 @onready var send_msjs = get_tree().get_first_node_in_group("msj")
 var client_custom = ENetMultiplayerPeer.new()
 var multiplayer_api : MultiplayerAPI
-var rpc_true = false
-var address = "127.0.0.1"
-var port = 8888
+@export var rpc_true = false
+@export var address = "127.0.0.1"
+@export var port = 8888
 var local_id = ""
 
 func _ready():

@@ -167,10 +167,16 @@ offset_bottom = 23.0
 text = "ip"
 
 [node name="Panel" type="Panel" parent="enviar mensaje"]
-offset_left = 745.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 748.0
 offset_top = 8.0
-offset_right = 1145.0
-offset_bottom = 308.0
+offset_right = -4.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="sdcrol" type="ScrollContainer" parent="enviar mensaje/Panel"]
 layout_mode = 1
@@ -179,7 +185,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="Label" type="Label" parent="enviar mensaje/Panel/sdcrol"]

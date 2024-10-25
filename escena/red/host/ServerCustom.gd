@@ -3,8 +3,8 @@ extends Node
 var server_custom = ENetMultiplayerPeer.new()
 var multiplayer_api : MultiplayerAPI
 var upnp = UPNP.new()
-var port = 8888
-var max_peers = 5
+@export var port = 8888
+@export var max_peers = 999
 @onready var rpc_local = get_tree().get_first_node_in_group("rpc_local")
 @onready var send_msjs = get_tree().get_first_node_in_group("msj")
 
