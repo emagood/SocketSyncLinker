@@ -21,7 +21,7 @@ func _ready():
 	get_tree().set_multiplayer(multiplayer_api, self.get_path())
 	# can use "/root/ServerCustom" or self.get_path()
 	multiplayer_api.multiplayer_peer = server_custom
-	Data.t_id = multiplayer_api.get_unique_id()
+	#Data.t_id = multiplayer_api.get_unique_id()
 	prints(" mi id servidor " + str(Data.t_id))
 
 
