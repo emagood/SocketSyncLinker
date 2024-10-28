@@ -22,10 +22,31 @@ Características :
 [ING]Characteristics:
 
 # e-net
-# upnp
-# threads
-# Ui menu 
+inplementado :)
+configuracion inicial
 
+Implemented :)
+Initial setup
+# upnp
+configuracion inicial
+
+Initial setup
+# threads
+configuracion inicial
+
+Initial setup
+# Ui menu 
+configuracion inicial
+
+Initial setup
+# mesages
+configuracion inicial
+
+Initial setup
+
+# compress x
+# database x
+# synchronize x
 
 
 [ING]
