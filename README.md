@@ -18,6 +18,11 @@
 
  ![Screenshot borrar](https://github.com/emagood/enet-godot-multi-user/blob/main/capturas/login%20mensaje.PNG)
  
+ 
+ # message between all or separately / mensage entre todos o por separado
+ ![Screenshot msg](https://github.com/emagood/Enet-Godot-Multi-User/blob/main/capturas/mensagep2p.PNG)
+ 
+ 
 Características :
 [ING]Characteristics:
 
