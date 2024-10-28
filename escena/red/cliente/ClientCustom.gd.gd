@@ -59,7 +59,8 @@ func _process(_delta: float) -> void:
 				prints("salgo")
 			queue_free()
 
-
+func init_group():
+	self.send_msjs = get_tree().get_first_node_in_group("msj")
 
 
 func _on_server_disconnected():
@@ -74,6 +75,8 @@ func _on_connection_succeeded():
 	print("Custom Client _on_connection_succeeded")
 	await get_tree().create_timer(1).timeout
 	print("Custom Peers: {0}".format([multiplayer.get_peers()]))
+	for i in multiplayer.get_peers():
+		prints(i)
 	if Data.t_id.has(str(multiplayer_api.get_unique_id())):
 		prints("error")
 	Data.t_id[multiplayer_api.get_unique_id()] = port
@@ -101,8 +104,7 @@ func rpc_server_custom_response(test_var1, test_var2):
 	print("Custom Client rpc_server_custom_response: {0} {1}".format(
 		[test_var1, test_var2]))
 
-func init_group():
-	self.send_msjs = get_tree().get_first_node_in_group("msj")
+
 
 @rpc("call_remote","any_peer") 
 func rpc_sms(test_var1, test_var2):
@@ -118,8 +120,7 @@ func rpc_sms(test_var1, test_var2):
 		#[test_var1, test_var2]))
 
 
-
-@rpc ("any_peer","call_local")
+@rpc("authority") 
 func rpc_server_all_response(peer_id, test_var1 = "gola", test_var2  = port):
 	#peer_id = multiplayer.get_remote_sender_id() 
 	prints(peer_id, "   datos response cliente" , test_var2 , "  fall " , test_var1)

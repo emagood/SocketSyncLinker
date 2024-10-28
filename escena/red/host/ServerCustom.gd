@@ -74,6 +74,24 @@ func rpc_server_custom_response(peer_id, test_var1 : String = "bienvenido al ser
 
 
 
+@rpc("call_remote","any_peer")  
+func rpc_sms(test_var1, test_var2):
+	if send_msjs == null:
+		init_group()
+	var peer_id = multiplayer.get_remote_sender_id()
+	send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
+	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
+	#rpc_sms.rpc_id(peer_id,"respondo servidor","HOLA")
+	#rpc_server_all_response(peer_id,"hola soy servidor",port)
+	
+	
+@rpc("authority") 
+func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
+	prints("del cliente ",test_var1 , " el segundo dato " , test_var2)
+	print("all response servidor : {0}".format([peer_id]) + "  del servidor `port" + str(port))
+	#rpc_server_all_response.rpc_id(peer_id, test_var1, test_var2)
+
+
 
 
 
@@ -92,24 +110,6 @@ func init_group():
 	self.rpc_local = get_tree().get_first_node_in_group("rpc_local")
 	self.send_msjs = get_tree().get_first_node_in_group("msj")
 	
-
-@rpc("call_remote","any_peer")  
-func rpc_sms(test_var1, test_var2):
-	if send_msjs == null:
-		init_group()
-	var peer_id = multiplayer.get_remote_sender_id()
-	send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
-	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
-	#rpc_sms.rpc_id(peer_id,"respondo servidor","HOLA")
-	#rpc_server_all_response(peer_id,"hola soy servidor",port)
-	
-	
-@rpc("call_local","any_peer") 
-func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
-	prints("del cliente ",test_var1 , " el segundo dato " , test_var2)
-	print("all response servidor : {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	#rpc_server_all_response.rpc_id(peer_id, test_var1, test_var2)
-
 
 
 	
