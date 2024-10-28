@@ -3,7 +3,8 @@
  por ahora solo es un proyecto de prueba 
  no esta documentado y comentado 
  
- [ING] Godot P2P Client-Server Network Using e-Net
+ [ING] 
+ Godot P2P Client-Server Network Using e-Net
  For now it is only a test project 
  it is not documented and commented on 
  
@@ -25,12 +26,19 @@ Características :
 # threads
 # Ui menu 
 
-se permite ser servidor o multi servidor 
-y tambien ser cliente o multi cliente ..
 
-[ING]It is allowed to be a server or multi-server 
+
+[ING]
+It is allowed to be a server or multi-server 
 and also be a customer or multi customer..
 
+The project is designed to use a fixed signal server 
+then the other host players and connect without a fixed server 
+Players can be hosts and clients of another player
+
+[ESP]
+se permite ser servidor o multi servidor 
+y tambien ser cliente o multi cliente ..
 
 el proyecto esta pensado para usar un servidor fijo de señal 
 luego los demas jugadores de host y se conectan sin un servidor fijo 
