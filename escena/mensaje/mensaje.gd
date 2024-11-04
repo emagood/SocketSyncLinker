@@ -25,13 +25,18 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	
+	nscroll.scroll_vertical = 1000
 	if msj_entra != "":
 		nscroll.scroll_vertical += soze
 		nmsj_label.text += str(msj_entra) +" para  " + str(Data.t_id.keys()) + "\n"
 		#nmsj_label.text += "\n"
 		msj_entra = ""
-	pass
+	
+	
+	if nmsj_label.text.length() >= 1500:
+		prints("mensage largo")
+		nmsj_label.text = ""
+
 
 
 
@@ -41,7 +46,6 @@ func _on_salir_pressed() -> void:
 
 
 func _on_enviar_pressed() -> void:
-	nscroll.scroll_vertical += soze
 	nmsj_label.text += str(text_user.text) +"  " + str(Data.t_id.keys()) + "\n"
 
 	if Data.t_id.is_empty() :
