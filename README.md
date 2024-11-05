@@ -50,6 +50,7 @@ configuracion inicial
 Initial setup
 
 # compress x
+# encrypt x
 # database x
 # synchronize x
 
