@@ -107,12 +107,13 @@ func rpc_server_custom_response(test_var1, test_var2):
 
 
 @rpc("call_remote","any_peer") 
-func rpc_sms(test_var1, test_var2):
+func rpc_sms(msg, mode:int):
 	var peer_id = multiplayer.get_remote_sender_id() 
-	if send_msjs == null:
+	if send_msjs == null :
 		init_group()
-	send_msjs.msj_entra = str(test_var1 + " " + test_var2 +  "\n" + "mensaje de   " + str(peer_id))
-	prints("yo resivi " + str(Data.t_id) , "  " ,test_var1 , test_var2)
+	if mode == 1:
+		send_msjs.msj_entra = str(msg + " "  +  "\n" + "mensaje de   " + str(peer_id))
+		prints("yo resivi " + str(Data.t_id) , "  " ,msg , mode )
 
 	#rpc_server_all_response(peer_id,"soy el cliente",port)
 	#prints("cliente del all response del sccript cliente ",test_var1 , "  el otro dato " , test_var2)
@@ -176,9 +177,9 @@ func _input(event: InputEvent) -> void:
 
 
 func send_msj(id,dat):
-	rpc_sms.rpc_id(id,dat,"HOLA")
+	rpc_sms.rpc_id(id,dat)
 	
 	
 
 func send_msja(id,dat):
-	rpc_sms.rpc(dat,"HOLA")
+	rpc_sms.rpc(dat)

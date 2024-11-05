@@ -7,14 +7,15 @@ extends Node
 @export var id_user = ""
 @export var id_pass = ""
 @export var external_ip = ""
+
+
+
+
+
+
 func _ready() -> void:
-
-
 	pass
 
 
 func _process(delta: float) -> void:
-
-
-
 	pass

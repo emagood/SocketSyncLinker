@@ -78,8 +78,9 @@ func rpc_server_custom_response(peer_id, test_var1 : String = "bienvenido al ser
 func rpc_sms(test_var1, test_var2):
 	if send_msjs == null:
 		init_group()
-	var peer_id = multiplayer.get_remote_sender_id()
-	send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
+	if test_var2 == 1:
+		var peer_id = multiplayer.get_remote_sender_id()
+		send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
 	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
 	#rpc_sms.rpc_id(peer_id,"respondo servidor","HOLA")
 	#rpc_server_all_response(peer_id,"hola soy servidor",port)
@@ -117,7 +118,8 @@ func init_group():
 
 
 func send_msj(id,dat):
-	rpc_sms.rpc_id(id,dat,"HOLA")
+	rpc_sms.rpc_id(id,dat,1)
 
 func send_msja(id,dat):
-	rpc_sms.rpc(dat,"HOLA")
+	rpc_sms.rpc(dat,id)
+	prints(dat,id)

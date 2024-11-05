@@ -13,10 +13,10 @@ var thread = null
 @onready var ip_local = "127.0.0.1"
 @onready var host_local = {}
 var upnp = UPNP.new()
-
+var inf
 
 func _ready() -> void:
-	var inf = class_info.new()
+	inf = class_info.new()
 	prints(inf.info())
 	thread = Thread.new()
 	add_to_group("rpc_local")
@@ -93,7 +93,8 @@ func _input(event: InputEvent) -> void:
 
 
 func nueva_menu():
-	prints("servidor")
+
+	prints("panel msg")
 	var player = preload("res://escena/red/menu/menu.tscn").instantiate()
 	add_child(player)
 	prints("instancio escena")
@@ -101,6 +102,7 @@ func nueva_menu():
 	pass
 
 func nueva_msj():
+	DebugMenu.style = DebugMenu.Style.HIDDEN
 	prints("servidor")
 	var player = preload("res://escena/mensaje/mensaje.tscn").instantiate()
 	add_child(player)
