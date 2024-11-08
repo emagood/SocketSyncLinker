@@ -73,19 +73,25 @@ func rpc_server_custom_response(peer_id, test_var1 : String = "bienvenido al ser
 	rpc_server_custom_response.rpc_id(peer_id, test_var1, test_var2)
 
 
+#region quitar esto por un mensaje de flujo
 
 @rpc("call_remote","any_peer")  
 func rpc_sms(test_var1, test_var2):
 	if send_msjs == null:
 		init_group()
-	if test_var2 == 1:
-		var peer_id = multiplayer.get_remote_sender_id()
-		send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
+	#if test_var2 == 1:
+	var peer_id = multiplayer.get_remote_sender_id()
+	send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
 	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
 	#rpc_sms.rpc_id(peer_id,"respondo servidor","HOLA")
 	#rpc_server_all_response(peer_id,"hola soy servidor",port)
+
+
+ #endregion 
 	
-	
+
+
+
 @rpc("authority") 
 func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 	prints("del cliente ",test_var1 , " el segundo dato " , test_var2)
@@ -98,22 +104,25 @@ func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 
 
 func _input(event: InputEvent) -> void:
-	#multiplayer.multiplayer_peer.close()
-	if Input.is_key_pressed(KEY_A): prints(str(multiplayer.get_peers()))
-	if Input.is_key_pressed(KEY_V) : 
-		var idply = multiplayer.get_peers()[0]
-		prints(idply)
-		var peer = server_custom.get_peer(idply)
-		
-
+	##multiplayer.multiplayer_peer.close()
+	#if Input.is_key_pressed(KEY_A): prints(str(multiplayer.get_peers()))
+	#if Input.is_key_pressed(KEY_V) : 
+		#var idply = multiplayer.get_peers()[0]
+		#prints(idply)
+		#var peer = server_custom.get_peer(idply)
 	pass
+
+
+
+
+
+
 func init_group():
 	self.rpc_local = get_tree().get_first_node_in_group("rpc_local")
 	self.send_msjs = get_tree().get_first_node_in_group("msj")
 	
 
 
-	
 
 
 

@@ -7,7 +7,7 @@
 '''
 extends Control
 
-const SERVER_PORT = 8888
+#const SERVER_PORT = 8888
 var thread = null
 @onready var port = 8888
 @onready var ip_local = "127.0.0.1"
@@ -62,15 +62,15 @@ func nueva_red(port,ip):
 
 
 func nueva_host(port):
-	if host_local.has(port):
+	if Data.host_local.has(port):
 		prints("existe el puerto del host")
 		return
-	host_local[port] = true
+	Data.host_local[port] = true
 	prints("servidor")
-	var player = preload("res://escena/red/host/servidor.tscn").instantiate()
-	player.port = port
-	add_child(player)
-	thread.start(_upnp_setup.bind(SERVER_PORT))
+	var server = preload("res://escena/red/host/servidor.tscn").instantiate()
+	server.port = port
+	add_child(server)
+	thread.start(_upnp_setup.bind(port))
 	prints("instancio escena")
 	await get_tree().create_timer(3).timeout
 	pass
@@ -81,7 +81,7 @@ func nueva_host(port):
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
+	#if Input.is_key_pressed(KEY_W): nueva_red(8888,"127.0.0.1")
 	#if Input.is_key_pressed(KEY_S): nueva_host(8888)
 	#if Input.is_key_pressed(KEY_M): nueva_msj()
 	
@@ -102,7 +102,7 @@ func nueva_menu():
 	pass
 
 func nueva_msj():
-	DebugMenu.style = DebugMenu.Style.HIDDEN
+	DebugMenu.style = DebugMenu.Style.HIDDEN # menu debug plugins
 	prints("servidor")
 	var player = preload("res://escena/mensaje/mensaje.tscn").instantiate()
 	add_child(player)
