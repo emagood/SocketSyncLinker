@@ -16,6 +16,9 @@ var upnp = UPNP.new()
 var inf
 
 func _ready() -> void:
+	#print(ProjectSettings.get_setting_with_override("application/config/name") ,"  configuracion ema  ")
+	#print(ProjectSettings.get_setting("application/config/name"))
+	#print(ProjectSettings.get_setting("application/config/custom_description", "No description specified."))
 	inf = class_info.new()
 	prints(inf.info())
 	thread = Thread.new()
