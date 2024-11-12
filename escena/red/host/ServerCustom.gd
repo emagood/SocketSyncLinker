@@ -76,13 +76,14 @@ func rpc_server_custom_response(peer_id, test_var1 : String = "bienvenido al ser
 #region quitar esto por un mensaje de flujo
 
 @rpc("call_remote","any_peer")  
-func rpc_sms(test_var1, test_var2):
+func rpc_sms(msg, mode):
 	if send_msjs == null:
 		init_group()
 	#if test_var2 == 1:
 	var peer_id = multiplayer.get_remote_sender_id()
-	send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
-	print("Custom servidor rpc_server_all_respons var ",test_var1 , " var 2 ",test_var2)
+	send_msjs.msj_entra = str(msg + " "  + " mensaje de   " + str(peer_id) )
+	#send_msjs.msj_entra = str(test_var1 + " " + test_var2 + "\n" + "mensaje de  " + str(peer_id))
+	print("Custom servidor rpc_server_all_respons var ",msg, " var 2 ",mode)
 	#rpc_sms.rpc_id(peer_id,"respondo servidor","HOLA")
 	#rpc_server_all_response(peer_id,"hola soy servidor",port)
 
@@ -126,9 +127,9 @@ func init_group():
 
 
 
-func send_msj(id,dat):
-	rpc_sms.rpc_id(id,dat,1)
+func send_msj(id,dat,mode):
+	rpc_sms.rpc_id(id,dat,mode)
 
-func send_msja(id,dat):
-	rpc_sms.rpc(dat,id)
-	prints(dat,id)
+func send_msja(dat, mode):
+	rpc_sms.rpc(dat,mode)
+	prints(dat,mode)
