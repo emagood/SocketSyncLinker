@@ -91,16 +91,16 @@ func _on_connection_failed():
 
 
 
-@rpc
-func rpc_server_custom(str):
+@rpc("call_remote","any_peer") 
+func rpc_server_host(str):
 	print("Custom Client rpc_server_custom")
 	print("Custom Peers: {0}".format([multiplayer.get_peers()]))
-	rpc_server_custom.rpc("hola") # this works (NO MORE STRINGS!)
+	rpc_server_host.rpc("hola") # this works (NO MORE STRINGS!)
 
 
 
 @rpc("authority") 
-func rpc_server_custom_response(test_var1, test_var2):
+func rpc_server_room(test_var1, test_var2):
 	print("Custom Client rpc_server_custom_response: {0} {1}".format(
 		[test_var1, test_var2]))
 
@@ -122,7 +122,7 @@ func rpc_sms(msg, mode):
 
 
 @rpc("authority") 
-func rpc_server_all_response(peer_id, test_var1 = "gola", test_var2  = port):
+func rpc_server_all(peer_id, test_var1 = "gola", test_var2  = port):
 	#peer_id = multiplayer.get_remote_sender_id() 
 	prints(peer_id, "   datos response cliente" , test_var2 , "  fall " , test_var1)
 	prints(" del lado del cliente    cliente    " + str(peer_id))

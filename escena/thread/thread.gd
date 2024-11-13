@@ -46,7 +46,7 @@ func restart_threads():
 
 # Función que ejecutará cada thread
 func _thread_function(userdata):
-	var a = 1000
+	var a = 10
 	while a:
 		prints("abuelo")
 		if userdata.has("hola"):

@@ -53,24 +53,19 @@ func _on_peer_disconnected(peer_id):
 
 
 
-
-
-@rpc("any_peer") 
-func rpc_server_custom(str):
+@rpc("call_remote","any_peer") 
+func rpc_server_host(str):
 	var peer_id = multiplayer.get_remote_sender_id() # even custom uses default "multiplayer" calls
 	print("rpc_server_custom , peer_id: {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	rpc_server_custom_response(peer_id)
+	rpc_server_room(peer_id)
 	prints("datos del cliente  8888" + "  del servidor `port" + str(port))
 
 
 
-
-
-
 @rpc("authority") 
-func rpc_server_custom_response(peer_id, test_var1 : String = "bienvenido al servidor ", test_var2 : int = port):
+func rpc_server_room(peer_id, test_var1 : String = "bienvenido al servidor ", test_var2 : int = port):
 	print("rpc_server_custom_response to peer_id : {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	rpc_server_custom_response.rpc_id(peer_id, test_var1, test_var2)
+	rpc_server_room.rpc_id(peer_id, test_var1, test_var2)
 
 
 #region quitar esto por un mensaje de flujo
@@ -94,7 +89,7 @@ func rpc_sms(msg, mode):
 
 
 @rpc("authority") 
-func rpc_server_all_response(peer_id, test_var1 : int = 0, test_var2 : int = 0):
+func rpc_server_all(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 	prints("del cliente ",test_var1 , " el segundo dato " , test_var2)
 	print("all response servidor : {0}".format([peer_id]) + "  del servidor `port" + str(port))
 	#rpc_server_all_response.rpc_id(peer_id, test_var1, test_var2)
