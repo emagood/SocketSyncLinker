@@ -1,5 +1,12 @@
+
+''' probablemente esto solo se use en el servidor prinipal'''
+
 extends Node
+
 class_name server_id
+
+
+
 
 var Player = load("res://class/player.gd").Player
 #var room = load("res://room_player_ipl.gd").Room  no se usa 
@@ -106,9 +113,6 @@ class RpcHandler:
 			print("Safe Unique ID " + safe_unique_id + " eliminado para el jugador con ID " + player_id)
 		else:
 			print("Safe Unique ID no encontrado.")
-
-
-
 
 
 

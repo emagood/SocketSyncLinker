@@ -3,19 +3,8 @@ extends player
 # Nodo que almacena las salas
 var rooms = []
 
-# Clase que representa un jugador
-#class Player:
-	#var player_id: String
-	#var ip: String
-	#var port: int
-#
-	#func _init(id: String, ip: String, port: int):
-		#player_id = id
-		#self.ip = ip
-		#self.port = port
 
-# Clase que representa una sala
-# Clase que representa una sala
+
 class Room:
 	var room_name: String
 	var players: Array = []
@@ -49,7 +38,7 @@ class Room:
 	func get_players() -> Array:
 		return players
 
-# Función para banear un jugador por nombre en una sala
+
 # Función para banear un jugador por nombre en una sala específica
 func ban_player_from_room_by_name(rooms: Array, room_name: String, player_id: String) -> void:
 	for room in rooms:
@@ -64,7 +53,6 @@ func ban_player_from_room_by_name(rooms: Array, room_name: String, player_id: St
 			return
 	print("Sala " + room_name + " no encontrada.")
 
-# Función para crear una nueva sala con modos de juego
 # Función para crear una nueva sala con modos de juego, IP y puerto
 func create_room(room_name: String, modes: Array, ip: String, port: int) -> void:
 	var new_room = Room.new(room_name, modes, ip, port)
@@ -72,7 +60,6 @@ func create_room(room_name: String, modes: Array, ip: String, port: int) -> void
 	print("Sala creada: " + room_name + " con modos: " + str(modes) + ", IP: " + ip + ", Puerto: " + str(port))
 
 
-# Función para unirse a una sala
 # Función para unirse a una sala con verificación de ban
 func join_room(room_name: String, player: Player) -> void:
 	for room in rooms:
@@ -172,8 +159,8 @@ func list_top_10_rooms_by_mode(rooms: Array, mode_name: String) -> void:
 
 func assign_rooms_to_players(players: Array, rooms: Array, mode: String) -> void:
 	for player in players:
-		if player.lobby == "":  # Verifica si la propiedad lobby está vacía
-			var sala_asignada = false  # Declara la variable sala_asignada
+		if player.lobby == "":  
+			var sala_asignada = false  
 			# Buscar una sala con el modo de juego especificado
 			for room in rooms:
 				if mode in room.game_modes and player.player_id not in room.banned_players:
@@ -204,9 +191,6 @@ func find_players_without_rooms(players: Array, mode: String) -> void:
 		#return 1
 	#else:
 		#return 0
-
-# Ejemplo de uso
-
 
 # Función para enviar un mensaje de un jugador a otro, especificando la sala por su nombre
 func send_message_in_room(rooms: Array, room_name: String, sender: Player, receiver: Player, message: String) -> void:
@@ -331,7 +315,6 @@ func _ready() -> void:
 	#var room1 = Room.new("Sala 1", ["Modo A", "Modo B"], "192.168.1.1", 1234)
 	#var room2 = Room.new("Sala 2", ["Modo B", "Modo C"], "192.168.1.2", 1235)
 	#var rooms = [room1, room2]
-# Ejemplo de jugadores
 
 
 # Enviar mensaje a un jugador en la sala
