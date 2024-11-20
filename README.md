@@ -51,7 +51,7 @@ Initial setup
 
 # compress x
 # encrypt x
-# database https://github.com/emagood/E-DataBase.git
+# database : https://github.com/emagood/E-DataBase.git
 # synchronize x
 
 
