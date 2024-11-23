@@ -57,15 +57,16 @@ func _on_peer_disconnected(peer_id):
 func rpc_server_host(str):
 	var peer_id = multiplayer.get_remote_sender_id() # even custom uses default "multiplayer" calls
 	print("rpc_server_custom , peer_id: {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	rpc_server_room(peer_id)
-	prints("datos del cliente  8888" + "  del servidor `port" + str(port))
+	rpc_login(peer_id)
+	prints("datos del cliente  8888" + "  del servidor `port " + str(port))
 
 
 
-@rpc("authority") 
-func rpc_server_room(peer_id, test_var1 : String = "bienvenido al servidor ", test_var2 : int = port):
-	print("rpc_server_custom_response to peer_id : {0}".format([peer_id]) + "  del servidor `port" + str(port))
-	rpc_server_room.rpc_id(peer_id, test_var1, test_var2)
+@rpc("call_remote","any_peer")
+func rpc_login( test_var1 : String = "bienvenido al servidor ", test_var2 : String = "bienvenido al servidor "):
+	print("rpc_server_custom_response to peer_id : {0}" + "  del servidor `port " + str(port))
+	var peer_id = multiplayer.get_remote_sender_id() # even custom uses default "multiplayer" calls
+	rpc_login.rpc_id( peer_id,test_var1, test_var2)
 
 
 #region quitar esto por un mensaje de flujo

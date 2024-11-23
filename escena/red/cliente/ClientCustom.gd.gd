@@ -81,6 +81,10 @@ func _on_connection_succeeded():
 		prints("error")
 	Data.t_id[multiplayer_api.get_unique_id()] = port
 	local_id = str(multiplayer_api.get_unique_id())
+	login(Data.id_user ,Data.id_pass)
+	
+	
+	
 	#rpc_server_custom("hola")
 
 
@@ -88,6 +92,9 @@ func _on_connection_succeeded():
 func _on_connection_failed():
 	rpc_true = false
 	print("Custom Client _on_connection_failed")
+
+
+
 
 
 
@@ -100,7 +107,7 @@ func rpc_server_host(str):
 
 
 @rpc("authority") 
-func rpc_server_room(test_var1, test_var2):
+func rpc_login(test_var1 : String = "bienvenido al servidor ", test_var2 : String = "bienvenido al servidor "):
 	print("Custom Client rpc_server_custom_response: {0} {1}".format(
 		[test_var1, test_var2]))
 
@@ -171,7 +178,8 @@ func _input(event: InputEvent) -> void:
 	#print("Custom ClientUnique ID: {0}".format([multiplayer_api.get_unique_id()]))
 	#await get_tree().create_timer(1).timeout
 
-
+func login(id_user,id_pass):
+	rpc_login.rpc_id(1,Data.id_user,Data.id_pass)
 
 
 
