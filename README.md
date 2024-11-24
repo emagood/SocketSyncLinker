@@ -1,10 +1,10 @@
-# rpc-godot-enet-multi-user
+# Enlazador de sincronización de sockets
  red de godot p2p cliente-servidor usando e-net
  por ahora solo es un proyecto de prueba 
  no esta documentado y comentado 
  
  [ING] 
- Godot P2P Client-Server Network Using e-Net
+ Godot P2P Client-Server Network Using e-Net (more)
  For now it is only a test project 
  it is not documented and commented on 
  
@@ -32,6 +32,11 @@ configuracion inicial
 
 Implemented :)
 Initial setup
+
+# websocket x
+
+# tcp x
+
 # upnp
 configuracion inicial
 
