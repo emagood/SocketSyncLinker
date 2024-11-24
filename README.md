@@ -56,7 +56,7 @@ Initial setup
 
 # compress x
 # encrypt x
-# database : https://github.com/emagood/E-DataBase.git
+# database : [https://github.com/emagood/E-DataBase.git](https://github.com/emagood/DataVaultLedger.git)
 # synchronize x
 
 
