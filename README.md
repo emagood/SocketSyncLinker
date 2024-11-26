@@ -76,4 +76,5 @@ el proyecto esta pensado para usar un servidor fijo de señal
 luego los demas jugadores de host y se conectan sin un servidor fijo 
 los jugadores pueden ser host y clientes de otro jugador 
 
+## It will be ported to a server and DB management project, it will be a test and verification project as well
  
