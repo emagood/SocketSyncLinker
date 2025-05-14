@@ -102,11 +102,11 @@ func rpc_server_all(peer_id, test_var1 : int = 0, test_var2 : int = 0):
 
 func _input(event: InputEvent) -> void:
 	##multiplayer.multiplayer_peer.close()
-	#if Input.is_key_pressed(KEY_A): prints(str(multiplayer.get_peers()))
-	#if Input.is_key_pressed(KEY_V) : 
-		#var idply = multiplayer.get_peers()[0]
-		#prints(idply)
-		#var peer = server_custom.get_peer(idply)
+	if Input.is_key_pressed(KEY_A): prints(str(multiplayer.get_peers()))
+	if Input.is_key_pressed(KEY_V) : 
+		var idply = multiplayer.get_peers()[0]
+		prints(idply)
+		var peer = server_custom.get_peer(idply)
 	pass
 
 

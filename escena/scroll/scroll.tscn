@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx04h62ws1rtv"]
 
-[ext_resource type="Script" path="res://escena/scroll/molde.gd" id="1_e7bel"]
+[ext_resource type="Script" uid="uid://b8att5kqwrntr" path="res://escena/scroll/molde.gd" id="1_e7bel"]
 [ext_resource type="Texture2D" uid="uid://306y1ctsathc" path="res://assets/fondo/paisaje.jpeg" id="2_ahltp"]
 [ext_resource type="PackedScene" uid="uid://b3xgouuphxig3" path="res://escena/scroll/menu_select.tscn" id="3_o04th"]
 

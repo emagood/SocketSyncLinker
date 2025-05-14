@@ -14,9 +14,9 @@ func _ready() -> void:
 	if Data.id_pass != "":
 		user_pass.text = Data.id_pass
 	@warning_ignore("int_as_enum_without_cast")
-	#DebugMenu.style = wrapi(DebugMenu.style + 1, 0, DebugMenu.Style.MAX)
-	DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
-	pass 
+	##DebugMenu.style = wrapi(DebugMenu.style + 1, 0, DebugMenu.Style.MAX)
+	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+	#pass 
 
 
 

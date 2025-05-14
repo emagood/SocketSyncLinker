@@ -6,14 +6,19 @@ var data_thread = {
 	"genio": "servidor"
 }
 
+var bucle = 0
 var thread: Thread
 var thread2: Thread
 var timer_local = 0
 var timer_local2 = 0
-
+var hilos = []
+var count = 20
 func _init():
-	thread = Thread.new()
-	thread2 = Thread.new()
+	for a in count:
+		thread = Thread.new()
+		hilos.append(thread)
+	##thread = Thread.new()
+	#thread2 = Thread.new()
 	timer_local = Time.get_ticks_msec()
 	timer_local2 = timer_local
 
@@ -23,20 +28,32 @@ func _ready():
 	prints("Threads iniciados.")
 
 func start_threads():
-	if thread == null or not thread.is_alive():
-		thread = Thread.new()
-		thread.start(_thread_function.bind(data_thread))
-	if thread2 == null or not thread2.is_alive():
-		thread2 = Thread.new()
-		thread2.start(_thread_function.bind(data_thread))
+	for a in hilos.size():
+		if hilos[a] == null or not hilos[a].is_alive():
+			hilos[a] = Thread.new()
+			hilos[a].start(_thread_function.bind(data_thread))
+		
+	
+	#if thread == null or not thread.is_alive():
+		#thread = Thread.new()
+		#thread.start(_thread_function.bind(data_thread))
+	#if thread2 == null or not thread2.is_alive():
+		#thread2 = Thread.new()
+		#thread2.start(_thread_function.bind(data_thread))
 
 func stop_threads():
-	if thread != null and thread.is_alive():
-		thread.call_deferred("wait_to_finish")
-		thread = null
-	if thread2 != null and thread2.is_alive():
-		thread2.call_deferred("wait_to_finish")
-		thread2 = null
+	for a in hilos.size():
+		if hilos[a] != null or not hilos[a].is_alive():
+			hilos[a].call_deferred("wait_to_finish")
+			hilos[a] = null
+		
+	
+	#if thread != null and thread.is_alive():
+		#thread.call_deferred("wait_to_finish")
+		#thread = null
+	#if thread2 != null and thread2.is_alive():
+		#thread2.call_deferred("wait_to_finish")
+		#thread2 = null
 	prints("Threads detenidos.")
 
 func restart_threads():
@@ -46,6 +63,8 @@ func restart_threads():
 
 # Función que ejecutará cada thread
 func _thread_function(userdata):
+	bucle +=1 
+	prints(bucle)
 	var a = 10
 	while a:
 		prints("abuelo")

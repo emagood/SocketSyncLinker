@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvkvwcjy46jqq"]
 
-[ext_resource type="Script" path="res://escena/main_rcp/rcp.gd" id="1_4vl5s"]
+[ext_resource type="Script" uid="uid://c1o771bc67lqk" path="res://escena/main_rcp/rcp.gd" id="1_4vl5s"]
 
 [node name="rcp" type="Control"]
 layout_mode = 3

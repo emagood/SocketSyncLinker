@@ -21,6 +21,7 @@ func _ready() -> void:
 	#print(ProjectSettings.get_setting("application/config/custom_description", "No description specified."))
 	inf = class_info.new()
 	prints(inf.info())
+	prints(OS.get_unique_id() , "  id pc")
 	thread = Thread.new()
 	add_to_group("rpc_local")
 	nueva_menu()
@@ -105,7 +106,7 @@ func nueva_menu():
 	pass
 
 func nueva_msj():
-	DebugMenu.style = DebugMenu.Style.HIDDEN # menu debug plugins
+	#DebugMenu.style = DebugMenu.Style.HIDDEN # menu debug plugins
 	prints("servidor")
 	var player = preload("res://escena/mensaje/mensaje.tscn").instantiate()
 	add_child(player)

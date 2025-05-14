@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3xgouuphxig3"]
 
 [ext_resource type="Texture2D" uid="uid://c5dyrfnhglo0m" path="res://assets/icon/icoe-net.png" id="1_ap27m"]
-[ext_resource type="Script" path="res://escena/scroll/menu_select.gd" id="2_r576i"]
+[ext_resource type="Script" uid="uid://linpfiabs1js" path="res://escena/scroll/menu_select.gd" id="2_r576i"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
